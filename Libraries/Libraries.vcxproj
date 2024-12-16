@@ -130,11 +130,13 @@
   <ItemGroup>
     <ClInclude Include="Generator.h" />
     <ClInclude Include="IStreamGenerator.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="RandomGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Generator.cpp" />
     <ClCompile Include="IStreamGenerator.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="RandomGenerator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
