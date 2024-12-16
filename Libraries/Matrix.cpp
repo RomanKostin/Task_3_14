@@ -35,7 +35,7 @@ std::vector<int>& miit::algebra::Matrix::operator[](int index)
 {
 	if (index<0 || index>rows - 1)
 	{
-		throw std::out_of_range("Выход за границу");
+		throw std::out_of_range("Р’С‹С…РѕРґ Р·Р° РіСЂР°РЅРёС†Сѓ");
 	}
 	return matrix[index];
 }
@@ -44,7 +44,7 @@ const std::vector<int>& miit::algebra::Matrix::operator[](int index) const
 {
 	if (index<0 || index>rows - 1)
 	{
-		throw std::out_of_range("Выход за границу");
+		throw std::out_of_range("Р’С‹С…РѕРґ Р·Р° РіСЂР°РЅРёС†Сѓ");
 	}
 	return matrix[index];
 }
