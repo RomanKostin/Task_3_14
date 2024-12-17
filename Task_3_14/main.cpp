@@ -3,7 +3,7 @@
 using namespace miit::algebra;
 int main()
 {
-	Matrix test(3,5);
+	Matrix<int> test(3,5);
 	std::cout << test;
 	return 0;
 }
