@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include "RandomGenerator.h"
+#include "IStreamGenerator.h"
 namespace miit::algebra
 {
 	template<typename T> class Matrix;
@@ -25,6 +27,8 @@ namespace miit::algebra
 		std::vector<T>&operator[](int index);
 		const std::vector<T>& operator[](int index) const;
 		std::string ToString() const;
+		void randomIntFill(int min,int max);
+		void istreamIntFill(std::istream& in);
 	};
 }
 template <typename T>
@@ -95,6 +99,32 @@ std::string miit::algebra::Matrix<T>::ToString() const
 		buffer << std::endl;
 	}
 	return buffer.str();
+}
+
+template<typename T>
+inline void miit::algebra::Matrix<T>::randomIntFill(int min, int max)
+{
+	RandomGenerator generator(min,max);
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < columns; j++)
+		{
+			matrix[i][j] = generator.generate();
+		}
+	}
+}
+
+template<typename T>
+inline void miit::algebra::Matrix<T>::istreamIntFill(std::istream& in)
+{
+	IStreamGenerator generator(in);
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < columns; j++)
+		{
+			matrix[i][j] = generator.generate();
+		}
+	}
 }
 
 template <typename T>
