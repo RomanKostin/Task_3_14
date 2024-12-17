@@ -13,7 +13,7 @@ namespace miit::algebra
 	class Matrix
 	{
 	private:
-		std::vector<std::vector<int>> matrix;
+		std::vector<std::vector<T>> matrix;
 		int rows;
 		int columns;
 	public:
