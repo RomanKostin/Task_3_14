@@ -29,6 +29,8 @@ namespace miit::algebra
 		std::string ToString() const;
 		void randomIntFill(int min,int max);
 		void istreamIntFill(std::istream& in);
+		int getRows();
+		int getColumns();
 	};
 }
 template <typename T>
@@ -125,6 +127,18 @@ inline void miit::algebra::Matrix<T>::istreamIntFill(std::istream& in)
 			matrix[i][j] = generator.generate();
 		}
 	}
+}
+
+template<typename T>
+inline int miit::algebra::Matrix<T>::getRows()
+{
+	return rows;
+}
+
+template<typename T>
+inline int miit::algebra::Matrix<T>::getColumns()
+{
+	return columns;
 }
 
 template <typename T>
