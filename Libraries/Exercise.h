@@ -1,14 +1,16 @@
 #pragma once
 #include "Matrix.h"
-
+#include "ExerciseVirtual.h"
 namespace miit::algebra
 {
-	class Exercise
+	class Exercise :public miit::algebra::ExerciseVirtual
 	{
-	private:
-		Matrix<int> matrix;
 	public:
-		Exercise(Matrix<int> matr) :matrix{matr} {}
-		Matrix<int> task1();
+
+		Exercise(Matrix<int> matr) : ExerciseVirtual(matr){}
+
+		Matrix<int> task1() override;
+
+		Matrix<int> task2() override;
 	};
 }

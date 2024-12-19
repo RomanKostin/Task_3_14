@@ -15,3 +15,8 @@ Matrix<int> miit::algebra::Exercise::task1()
 	}
 	return temp;
 }
+
+Matrix<int> miit::algebra::Exercise::task2()
+{
+	return matrix;
+}

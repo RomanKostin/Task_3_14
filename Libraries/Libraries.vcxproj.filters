@@ -30,6 +30,9 @@
     <ClInclude Include="Exercise.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="ExerciseVirtual.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Generator.cpp">
@@ -45,6 +48,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Exercise.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ExerciseVirtual.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
