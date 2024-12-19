@@ -34,8 +34,14 @@ namespace miit::algebra
 	};
 }
 template <typename T>
-miit::algebra::Matrix<T>::Matrix(int row, int column) :rows{ row }, columns{ column }
+miit::algebra::Matrix<T>::Matrix(int row, int column)
 {
+	if (row < 0 || column < 0)
+	{
+		throw std::out_of_range("Выход за границу");
+	}
+	rows = row; 
+	columns = column;
 	this->matrix.assign(row, std::vector<T>(column));
 }
 
