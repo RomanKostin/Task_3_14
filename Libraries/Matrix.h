@@ -29,8 +29,6 @@ namespace miit::algebra
 		std::vector<T>&operator[](int index);
 		const std::vector<T>& operator[](int index) const;
 		std::string ToString() const;
-	//	void randomIntFill(int min,int max);
-	//	void istreamIntFill(std::istream& in);
 		void Fill(Generator& generator);
 		int getRows();
 		int getColumns();
@@ -111,32 +109,6 @@ std::string miit::algebra::Matrix<T>::ToString() const
 	}
 	return buffer.str();
 }
-
-//template<typename T>
-//inline void miit::algebra::Matrix<T>::randomIntFill(int min, int max)
-//{
-//	RandomGenerator generator(min,max);
-	//for (int i = 0; i < rows; i++)
-	//{
-	//	for (int j = 0; j < columns; j++)
-	//	{
-	//		matrix[i][j] = generator.generate();
-	//	}
-	//}
-//}
-
-//template<typename T>
-//inline void miit::algebra::Matrix<T>::istreamIntFill(std::istream& in)
-//{
-//	IStreamGenerator generator(in);
-//	for (size_t i = 0; i < rows; i++)
-//	{
-//		for (size_t j = 0; j < columns; j++)
-//		{
-//			matrix[i][j] = generator.generate();
-//		}
-//	}
-//}
 
 template<typename T>
 inline void miit::algebra::Matrix<T>::Fill(Generator& generator)
