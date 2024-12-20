@@ -8,13 +8,13 @@ namespace miit::algebra
 
 		Matrix<int> matrix;
 
-		virtual Matrix<int> task1() = 0;
+		virtual void task1() = 0;
 
-		virtual Matrix<int> task2() = 0;
+		virtual void task2() = 0;
 
 	public:
 
-		explicit ExerciseVirtual(Matrix<int> matr) :matrix{matr} {}
+		explicit ExerciseVirtual(int rows, int columns,Generator& generator);
 
 		virtual ~ExerciseVirtual()=default;
 	};

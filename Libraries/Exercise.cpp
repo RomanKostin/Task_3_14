@@ -1,22 +1,20 @@
 #include "Exercise.h"
 using namespace miit::algebra;
-Matrix<int> miit::algebra::Exercise::task1()
+void miit::algebra::Exercise::task1()
 {
-	Matrix<int> temp(matrix);
-	for (int i=0;i < temp.getRows();i++)
+	for (size_t i=0;i < matrix.getRows();i++)
 	{
-		for (int j=0;j < temp.getColumns();j++)
+		for (size_t j=0;j < matrix.getColumns();j++)
 		{
 			if ((i + j) % 2 != 0)
 			{
-				temp[i][j] = 0;
+				matrix[i][j] = 0;
 			}
 		}
 	}
-	return temp;
 }
 
-Matrix<int> miit::algebra::Exercise::task2()
+void miit::algebra::Exercise::task2()
 {
 	int newSize=0;
 	for (int i = 0;i < matrix.getColumns();i++)
@@ -45,7 +43,7 @@ Matrix<int> miit::algebra::Exercise::task2()
 			k++;
 		}
 	}
-	return temp;
+	matrix = temp;
 }
 
 bool miit::algebra::Exercise::checkColumnForNull(int column)

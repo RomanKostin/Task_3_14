@@ -16,19 +16,22 @@ namespace miit::algebra
 	{
 	private:
 		std::vector<std::vector<T>> matrix;
-		int rows;
-		int columns;
+		size_t rows;
+		size_t columns;
 	public:
+		Matrix() = default;
 		Matrix(int row, int column);
 		Matrix(const Matrix& other);
 		Matrix(Matrix&& other)noexcept;
 		Matrix& operator =(const Matrix& other);
 		Matrix& operator =(Matrix&& other) noexcept;
+		~Matrix() = default;
 		std::vector<T>&operator[](int index);
 		const std::vector<T>& operator[](int index) const;
 		std::string ToString() const;
-		void randomIntFill(int min,int max);
-		void istreamIntFill(std::istream& in);
+	//	void randomIntFill(int min,int max);
+	//	void istreamIntFill(std::istream& in);
+		void Fill(Generator& generator);
 		int getRows();
 		int getColumns();
 	};
@@ -98,9 +101,9 @@ template <typename T>
 std::string miit::algebra::Matrix<T>::ToString() const
 {
 	std::stringstream buffer{};
-	for (int i = 0; i < rows; i++)
+	for (size_t i = 0; i < rows; i++)
 	{
-		for (int j = 0; j < columns; j++)
+		for (size_t j = 0; j < columns; j++)
 		{
 			buffer << matrix[i][j] << " ";
 		}
@@ -109,26 +112,38 @@ std::string miit::algebra::Matrix<T>::ToString() const
 	return buffer.str();
 }
 
-template<typename T>
-inline void miit::algebra::Matrix<T>::randomIntFill(int min, int max)
-{
-	RandomGenerator generator(min,max);
-	for (int i = 0; i < rows; i++)
-	{
-		for (int j = 0; j < columns; j++)
-		{
-			matrix[i][j] = generator.generate();
-		}
-	}
-}
+//template<typename T>
+//inline void miit::algebra::Matrix<T>::randomIntFill(int min, int max)
+//{
+//	RandomGenerator generator(min,max);
+	//for (int i = 0; i < rows; i++)
+	//{
+	//	for (int j = 0; j < columns; j++)
+	//	{
+	//		matrix[i][j] = generator.generate();
+	//	}
+	//}
+//}
+
+//template<typename T>
+//inline void miit::algebra::Matrix<T>::istreamIntFill(std::istream& in)
+//{
+//	IStreamGenerator generator(in);
+//	for (size_t i = 0; i < rows; i++)
+//	{
+//		for (size_t j = 0; j < columns; j++)
+//		{
+//			matrix[i][j] = generator.generate();
+//		}
+//	}
+//}
 
 template<typename T>
-inline void miit::algebra::Matrix<T>::istreamIntFill(std::istream& in)
+inline void miit::algebra::Matrix<T>::Fill(Generator& generator)
 {
-	IStreamGenerator generator(in);
-	for (int i = 0; i < rows; i++)
+	for (size_t i = 0;i < rows;i++)
 	{
-		for (int j = 0; j < columns; j++)
+		for (size_t j = 0; j < columns;j++)
 		{
 			matrix[i][j] = generator.generate();
 		}

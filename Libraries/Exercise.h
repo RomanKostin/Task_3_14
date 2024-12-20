@@ -7,11 +7,11 @@ namespace miit::algebra
 	{
 	public:
 
-		Exercise(Matrix<int> matr) : ExerciseVirtual(matr){}
+		Exercise(int rows,int columns,Generator& generator) : ExerciseVirtual(rows,columns,generator){}
 
-		Matrix<int> task1() override;
+		void task1() override;
 
-		Matrix<int> task2() override;
+		void task2() override;
 
 		bool checkColumnForNull(int column);
 	};
