@@ -11,15 +11,7 @@ int main()
 	test.Fill(gen);
 	std::cout << std::endl << test << std::endl;
 	IStreamGenerator igen(std::cin);
-	//Exercise solver(test);
-	//std::cout << std::endl << solver.task1();
-	//for (int i = 0;i < test.getColumns();i++)
-	//{
-	//	if (solver.checkColumnForNull(i))
-	//	{
-	//		std::cout << std::endl << "метод работает в колонне " << i << std::endl;
-	//	}
-	//}
-//	std::cout <<std::endl << solver.task2();
+	Exercise task(3, 5, gen);
+	task.Run();
 	return 0;
 }

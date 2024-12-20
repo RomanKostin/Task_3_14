@@ -17,5 +17,7 @@ namespace miit::algebra
 		explicit ExerciseVirtual(int rows, int columns,Generator& generator);
 
 		virtual ~ExerciseVirtual()=default;
+
+		void Run();
 	};
 }
