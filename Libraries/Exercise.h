@@ -12,5 +12,7 @@ namespace miit::algebra
 		Matrix<int> task1() override;
 
 		Matrix<int> task2() override;
+
+		bool checkColumnForNull(int column);
 	};
 }
