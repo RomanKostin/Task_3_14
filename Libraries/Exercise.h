@@ -13,5 +13,7 @@ namespace miit::algebra
 
 		void task2() override;
 
+		Matrix<int> getMatrix();
+
 	};
 }
