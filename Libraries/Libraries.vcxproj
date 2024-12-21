@@ -128,10 +128,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Exercise.h" />
+    <ClInclude Include="ExerciseVirtual.h" />
     <ClInclude Include="Generator.h" />
+    <ClInclude Include="IStreamGenerator.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="RandomGenerator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Exercise.cpp" />
+    <ClCompile Include="ExerciseVirtual.cpp" />
     <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="IStreamGenerator.cpp" />
+    <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="RandomGenerator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
