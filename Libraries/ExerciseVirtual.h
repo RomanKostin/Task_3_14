@@ -14,7 +14,7 @@ namespace miit::algebra
 
 	public:
 
-		explicit ExerciseVirtual(int rows, int columns,Generator& generator);
+		explicit ExerciseVirtual(size_t rows, size_t columns,Generator& generator);
 
 		virtual ~ExerciseVirtual()=default;
 

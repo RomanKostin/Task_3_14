@@ -20,27 +20,23 @@ namespace miit::algebra
 		size_t columns;
 	public:
 		Matrix() = default;
-		Matrix(int row, int column);
+		Matrix(size_t row, size_t column);
 		Matrix(const Matrix& other);
 		Matrix(Matrix&& other)noexcept;
 		Matrix& operator =(const Matrix& other);
 		Matrix& operator =(Matrix&& other) noexcept;
 		~Matrix() = default;
-		std::vector<T>&operator[](int index);
-		const std::vector<T>& operator[](int index) const;
+		std::vector<T>&operator[](size_t index);
+		const std::vector<T>& operator[](size_t index) const;
 		std::string ToString() const;
 		void Fill(Generator& generator);
-		int getRows();
-		int getColumns();
+		size_t getRows();
+		size_t getColumns();
 	};
 }
 template <typename T>
-miit::algebra::Matrix<T>::Matrix(int row, int column)
+miit::algebra::Matrix<T>::Matrix(size_t row, size_t column)
 {
-	if (row < 0 || column < 0)
-	{
-		throw std::out_of_range("Выход за границу");
-	}
 	rows = row; 
 	columns = column;
 	this->matrix.assign(row, std::vector<T>(column));
@@ -76,22 +72,14 @@ miit::algebra::Matrix<T>& miit::algebra::Matrix<T>::operator=(Matrix&& other) no
 	return *this;
 }
 template <typename T>
-std::vector<T>& miit::algebra::Matrix<T>::operator[](int index)
+std::vector<T>& miit::algebra::Matrix<T>::operator[](size_t index)
 {
-	if (index<0 || index>rows - 1)
-	{
-		throw std::out_of_range("Выход за границу");
-	}
 	return matrix[index];
 }
 
 template <typename T>
-const std::vector<T>& miit::algebra::Matrix<T>::operator[](int index) const
+const std::vector<T>& miit::algebra::Matrix<T>::operator[](size_t index) const
 {
-	if (index<0 || index>rows - 1)
-	{
-		throw std::out_of_range("Выход за границу");
-	}
 	return matrix[index];
 }
 
@@ -123,13 +111,13 @@ inline void miit::algebra::Matrix<T>::Fill(Generator& generator)
 }
 
 template<typename T>
-inline int miit::algebra::Matrix<T>::getRows()
+inline size_t miit::algebra::Matrix<T>::getRows()
 {
 	return rows;
 }
 
 template<typename T>
-inline int miit::algebra::Matrix<T>::getColumns()
+inline size_t miit::algebra::Matrix<T>::getColumns()
 {
 	return columns;
 }

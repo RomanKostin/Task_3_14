@@ -7,12 +7,12 @@ namespace miit::algebra
 	{
 	public:
 
-		Exercise(int rows,int columns,Generator& generator) : ExerciseVirtual(rows,columns,generator){}
+		Exercise(size_t rows, size_t columns,Generator& generator) : ExerciseVirtual(rows,columns,generator){}
 
 		void task1() override;
 
 		void task2() override;
 
-		bool checkColumnForNull(int column);
+		bool checkColumnForNull(size_t column);
 	};
 }

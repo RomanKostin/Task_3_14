@@ -16,8 +16,8 @@ void miit::algebra::Exercise::task1()
 
 void miit::algebra::Exercise::task2()
 {
-	int newSize=0;
-	for (int i = 0;i < matrix.getColumns();i++)
+	size_t newSize=0;
+	for (size_t i = 0;i < matrix.getColumns();i++)
 	{
 		if (checkColumnForNull(i))
 		{
@@ -26,10 +26,10 @@ void miit::algebra::Exercise::task2()
 		}
 	}
 	Matrix<int> temp(matrix.getRows(),matrix.getColumns()+newSize);
-	int k = 0;
-	for (int j = 0;j < matrix.getColumns();j++)
+	size_t k = 0;
+	for (size_t j = 0;j < matrix.getColumns();j++)
 	{
-		for (int i = 0;i < matrix.getRows();i++)
+		for (size_t i = 0;i < matrix.getRows();i++)
 		{
 			temp[i][k] = matrix[i][j];
 		}
@@ -46,9 +46,9 @@ void miit::algebra::Exercise::task2()
 	matrix = temp;
 }
 
-bool miit::algebra::Exercise::checkColumnForNull(int column)
+bool miit::algebra::Exercise::checkColumnForNull(size_t column)
 {
-	for (int i=0;i<matrix.getRows();i++)
+	for (size_t i=0;i<matrix.getRows();i++)
 	{
 		if (matrix[i][column] == 0)
 		{
