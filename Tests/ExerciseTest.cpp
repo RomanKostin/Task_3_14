@@ -20,7 +20,7 @@ namespace ExerciseTest
 		{
 			RandomGenerator gen(0, 9);
 			size_t originalColumns = 3;
-			Exercise test(3, 3, gen);
+			Exercise test(3, originalColumns, gen);
 			test.task2();
 			if (test.getMatrix().checkColumnForNull(0) || test.getMatrix().checkColumnForNull(1) || test.getMatrix().checkColumnForNull(2))
 			{
