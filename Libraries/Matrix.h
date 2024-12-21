@@ -32,6 +32,7 @@ namespace miit::algebra
 		void Fill(Generator& generator);
 		size_t getRows();
 		size_t getColumns();
+		bool checkColumnForNull(size_t column);
 	};
 }
 template <typename T>
@@ -129,3 +130,15 @@ std::ostream& miit::algebra::operator<<(std::ostream& os, const Matrix<T>& matr)
 	return os;
 }
 
+template <typename T>
+bool miit::algebra::Matrix<T>::checkColumnForNull(size_t column)
+{
+	for (size_t i = 0; i < rows; i++)
+	{
+		if (matrix[i][column] == 0)
+		{
+			return true;
+		}
+	}
+	return false;
+}

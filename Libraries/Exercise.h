@@ -13,6 +13,5 @@ namespace miit::algebra
 
 		void task2() override;
 
-		bool checkColumnForNull(size_t column);
 	};
 }
