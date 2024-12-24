@@ -6,8 +6,18 @@
 #include "IStreamGenerator.h"
 namespace miit::algebra
 {
+	/*
+	*@brief класс матрица
+	*/
 	template<typename T> class Matrix;
 
+	/*
+	*@brief оператор "<<" дл¤ класса матрица
+	*@tparam T - тип данных в матрице
+	*@param os - поток вывода
+	*@param matr - матрица
+	*@return измененный поток вывода
+	*/
 	template<typename T>
 	std::ostream& operator<<(std::ostream& os,const Matrix<T>& matr);
 
@@ -19,19 +29,90 @@ namespace miit::algebra
 		size_t rows;
 		size_t columns;
 	public:
+		/*
+		*@brief конструктор матрицы без параметров
+		*/
 		Matrix() = default;
+
+		/*
+		*@brief конструктор матрицы по количеству строк и столбцов
+		*@param row - строки
+		*@param column - столбцы
+		*/
 		Matrix(size_t row, size_t column);
+
+		/*
+		*@brief конструктор копировани¤ дл¤ матрицы
+		*@param other - друга¤ матрица
+		*/
 		Matrix(const Matrix& other);
+
+		/*
+		*@brief конструктор перемещением дл¤ матрицы
+		*@param other - перемещаема¤ матрица
+		*/
 		Matrix(Matrix&& other)noexcept;
+
+		/*
+		*@brief оператор "=" дл¤ класса матрица
+		*@param other - друга¤ матрица
+		*/
 		Matrix& operator =(const Matrix& other);
+
+		/*
+		*@brief оператор "=" перемещением дл¤ матрицы
+		*@param other - перемещаема¤ матрица
+		*/
 		Matrix& operator =(Matrix&& other) noexcept;
+
+		/*
+		*@brief деструктор матрицы
+		*/
 		~Matrix() = default;
+
+		/*
+		*@brief оператор "[]" дл¤ класса матрица
+		*@param index - индекс возвращаемого вектора/строки
+		*@return вектор
+		*/
 		std::vector<T>&operator[](size_t index);
+
+		/*
+		*@brief константный оператор "[]" дл¤ класса матрица 
+		*@param index - индекс возвращаемого вектора/строки
+		*@return вектор
+		*/
 		const std::vector<T>& operator[](size_t index) const;
+
+		/*
+		*@brief метод вывода матрицы в строку
+		*@return матрица в виде строки
+		*/
 		std::string ToString() const;
+
+		/*
+		*@brief метод заполнени¤ матрицы через генераторы
+		*@param generator - генератор
+		*/
 		void Fill(Generator& generator);
+
+		/*
+		*@brief геттер строк матрицы
+		*@return строки матрицы
+		*/
 		size_t getRows();
+
+		/*
+		*@brief геттер столбцов матрицы
+		*@return столбцы матрицы
+		*/
 		size_t getColumns();
+
+		/*
+		*@brief метод проверки столбца матрицы на наличие нул¤
+		*@param column - индекс провер¤емого столбца
+		*@return true, если столбец содержит нуль, иначе false
+		*/
 		bool checkColumnForNull(size_t column);
 	};
 }
