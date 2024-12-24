@@ -45,3 +45,8 @@ void miit::algebra::Exercise::task2()
 	}
 	matrix = temp;
 }
+
+Matrix<int> miit::algebra::Exercise::getMatrix()
+{
+	return matrix;
+}
